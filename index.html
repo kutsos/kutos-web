@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KutOs | Hafif, Modern, Özgür</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0c;
+            --accent-color: #3498db;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --text-color: #e0e0e0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0c 100%);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+            animation: fadeInScale 1.2s ease-out;
+        }
+
+        .os-logo {
+            width: 150px;
+            height: auto;
+            filter: drop-shadow(0 0 20px rgba(52, 152, 219, 0.4));
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #888;
+            max-width: 600px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 80px 10%;
+            background: #0d0d0f;
+        }
+
+        .feature-card {
+            background: var(--glass-bg);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+        }
+
+        .feature-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .repo-section {
+            padding: 80px 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .config-box {
+            background: #000;
+            width: 100%;
+            max-width: 700px;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-color);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .config-box header {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.7rem;
+            color: #444;
+            text-transform: uppercase;
+        }
+
+        code { color: #569cd6; }
+        .comment { color: #6a9955; }
+        .string { color: #ce9178; }
+
+        .footer {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #444;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .tagline { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="logo-container">
+            <!-- Logo dosyanı GitHub Pages'e yüklediğinde bu yol çalışacaktır -->
+            <img src="https://YOUR_GITHUB_USERNAME.github.io/kutos-repo/x86_64/kutos-wallpaper-1.0-1-any.pkg.tar.zst" style="display:none;" />
+            <!-- Not: Logo için repo içindeki resmi kullanabilirsin -->
+            <svg class="os-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" stroke="#3498db" stroke-width="4"/>
+                <path d="M30 50L45 65L70 35" stroke="#3498db" stroke-width="6" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <h1>KutOs</h1>
+        <p class="tagline">Minimalist tüketim, maksimum performans. Özgürlüğün en hafif hali.</p>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>Minimalizm</h3>
+            <p>Sadece ihtiyacınız olan paketlerle gelen, şişirilmemiş bir sistem.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Hafiflik</h3>
+            <p>Xfce tabanlı optimize edilmiş arayüz ile en eski cihazlarda bile akıcı deneyim.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Modern Tasarım</h3>
+            <p>Karanlık tema ve şık görsel bileşenlerle modern bir çalışma ortamı.</p>
+        </div>
+    </section>
+
+    <section class="repo-section">
+        <h2 style="margin-bottom: 30px;">Resmi Depo Kurulumu</h2>
+        <div class="config-box">
+            <header>pacman.conf</header>
+            <span class="comment"># KutOs Resmi Paketi Deposu</span><br>
+            [kutosrepository]<br>
+            SigLevel = <span class="string">Optional TrustAll</span><br>
+            Server = <span class="string">https://kutsos.github.io/kutos-repo/$arch</span>
+        </div>
+        <p style="margin-top: 20px; color: #666;">Kurulumdan sonra <code>sudo pacman -Syy</code> komutu ile güncelleyin.</p>
+    </section>
+
+    <footer class="footer">
+        <p>KutOs Project &copy; 2026 | Developed by Bugra Akdemir</p>
+        <p style="font-size: 0.7rem; margin-top: 10px;">Powered by Arch Linux & Archiso</p>
+    </footer>
+
+</body>
+</html>
